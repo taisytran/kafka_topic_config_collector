@@ -14,7 +14,7 @@ class TopicConfigCollector < PrometheusExporter::Server::TypeCollector
 
   def collect(obj)
     if obj["retention"].is_a?(Integer)
-      @oldies.observe(obj["retention"])
+      @retention.observe(obj["retention"])
     end
   end
 
