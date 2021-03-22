@@ -3,6 +3,8 @@ Expose kafka topic config metrics
 
 # How to Install
 ```cmd
+gem install bundler -v 2.1.4
+
 chmod +x bin/*
 bin/setup
 ```
