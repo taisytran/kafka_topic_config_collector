@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+set -vx
+
+## Install rbenv & ruby
+which ruby
+result=$?
+if [ $result -ne 0 ]; then
+  git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+  echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+  source ~/.bashrc
+
+  # Install and enable ruby
+  rbenv install 2.6.5 & rbenv global 2.6.5
+fi
+
+bundle install

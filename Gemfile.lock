@@ -1,0 +1,21 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    digest-crc (0.6.3)
+      rake (>= 12.0.0, < 14.0.0)
+    prometheus_exporter (0.7.0)
+      webrick
+    rake (13.0.3)
+    ruby-kafka (1.3.0)
+      digest-crc
+    webrick (1.7.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  prometheus_exporter
+  ruby-kafka
+
+BUNDLED WITH
+   2.1.4
