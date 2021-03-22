@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+which ruby
+result=$?
+
+if [$result -ne 0]; then
+  yum install -y git gcc make readline-devel openssl-devel
+
+  # Install ruby-build system-widely
+  git clone git://github.com/sstephenson/ruby-build.git /tmp/ruby-build
+  cd /tmp/ruby-build
+  ./install.sh
+
+  # Install rb-env
+  git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+  echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+  source ~/.bashrc
+
+  # Install and enable ruby
+  rbenv install 2.6.5 && rbenv global 2.6.5
+fi
+
