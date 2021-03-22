@@ -3,7 +3,7 @@
 which ruby
 result=$?
 
-if [$result -ne 0]; then
+if [ $result -ne 0 ]; then
   yum install -y git gcc make readline-devel openssl-devel
 
   # Install ruby-build system-widely
