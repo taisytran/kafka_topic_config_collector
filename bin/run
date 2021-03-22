@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+
+bundle exec prometheus_exporter -a topic_config_collector.rb -v --label '{"instance": "kafka_topic_config"}'

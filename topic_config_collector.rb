@@ -1,4 +1,7 @@
 require "kafka"
+require "dotenv"
+
+Dotenv.load
 
 class TopicConfigCollector < PrometheusExporter::Server::TypeCollector
   def initialize
@@ -31,6 +34,6 @@ class TopicConfigCollector < PrometheusExporter::Server::TypeCollector
   end
 
   def kafka
-    Kafka.new(["localhost:9092"])
+    Kafka.new(ENV["KAFKA_BROKER_URLS"].split(","))
   end
 end

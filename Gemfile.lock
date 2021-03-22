@@ -3,6 +3,7 @@ GEM
   specs:
     digest-crc (0.6.3)
       rake (>= 12.0.0, < 14.0.0)
+    dotenv (2.7.6)
     prometheus_exporter (0.7.0)
       webrick
     rake (13.0.3)
@@ -14,6 +15,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   prometheus_exporter
   ruby-kafka
 
